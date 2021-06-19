@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\CotasControllador;
+use App\Http\Controllers\CadastroControllador;
 
 /*
 |--------------------------------------------------------------------------
@@ -19,6 +20,8 @@ Route::get('/', function () {
 });
 
 Route::resource('cota', CotasControllador::class);
-//Auth::routes();
+Auth::routes();
 
+// Rota cadastro de aluno
+Route::resource('/cadastro', CadastroControllador::class);
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
