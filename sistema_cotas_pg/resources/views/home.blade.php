@@ -15,9 +15,12 @@
                     @endif
 
                     {{ __('You are logged in!') }}
+                    <p><h5 class="card-title">Cadastro de Aluno</h5>
+                        <p><a href="/cadastro" class="btn btn-sm btn-primary" role="button">Cadastrar</a>
                 </div>
             </div>
         </div>
     </div>
 </div>
+
 @endsection
