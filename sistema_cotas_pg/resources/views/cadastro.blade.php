@@ -1,1 +1,11 @@
-<h1>View cadastro</h2>
+<html>
+
+<body>
+
+
+
+</body>
+</html>
+
+
+
