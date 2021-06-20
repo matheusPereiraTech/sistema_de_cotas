@@ -19,7 +19,6 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::resource('cota', CotasControllador::class);
 Auth::routes();
 
 // Rota cadastro de aluno
