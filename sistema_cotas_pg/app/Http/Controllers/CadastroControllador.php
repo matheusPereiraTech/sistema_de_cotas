@@ -1,7 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
-
+use App\Models\Aluno;
 use Illuminate\Http\Request;
 
 class CadastroControllador extends Controller
@@ -34,7 +34,16 @@ class CadastroControllador extends Controller
      */
     public function store(Request $request)
     {
-        //
+
+        $aluno = new Aluno();
+        $aluno -> matricula = $request -> input('matricula');
+        $aluno -> dataNascimento = $request -> input('dataNascimento');
+        $aluno -> email = $request -> input('email');
+        $aluno -> sexo = $request -> input('sexo');
+        $aluno -> raca = $request -> input('raca');
+        $aluno -> forma_ingresso = $request -> input('forma_ingresso');
+        $aluno -> save();
+        
     }
 
     /**
