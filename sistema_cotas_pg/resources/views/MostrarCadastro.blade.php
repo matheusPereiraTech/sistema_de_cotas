@@ -1,4 +1,5 @@
 <html>
+
 <head>
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
     <title>Pagina de Alunos</title>
