@@ -37,10 +37,10 @@ class CadastroControllador extends Controller
     {
         $request->validate([
             'data_nascimento'=>'required',
-            'email'=>'required|email',
+            'email'=>'required|email|unique:alunos',
             'sexo'=>'required',
             'raca'=>'required',
-            'curso'=>'required',
+            'curso'=>'required|max:100',
             'status'=>'required',
         ]);
 
