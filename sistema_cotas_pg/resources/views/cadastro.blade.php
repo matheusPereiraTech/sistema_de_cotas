@@ -32,7 +32,7 @@
                                         placeholder="E-mail"><br><br>
 
                                     <label for="sexo">Sexo</label>
-                                    <select name="sexo">
+                                    <select name="sexo" class="form-control">
                                         <option value="" selected>&nbsp;</option>
                                         <option value="F">Feminino</option>
                                         <option value="M">Masculino</option>
@@ -50,15 +50,19 @@
                                     <input type="text" class="form-control" name="curso" id="curso"
                                         placeholder="Curso"><br><br>
 
-                                    <label for="status">Curso</label>
-                                    <input type="text" class="form-control" name="status" id="status"
-                                        placeholder="Status"><br><br>
+                                    <label for="status">Status</label>
+                                    <select name="status" class="form-control">
+                                        <option value="" selected>&nbsp;</option>
+                                        <option value="Cursando">Cursando</option>
+                                        <option value="Graduado">Graduado</option>
+                                        <option value="Não Iniciado">Não Iniciado</option>
+                                        <option value="Trancado">Trancado</option>
+                                    </select><br><br>
 
                                     <button type="submit" class="btn btn-primary btn-sm">Salvar</button>
                                     <button type="submit" class="btn btn-danger btn-sm">Cancelar</button>
                                     <a href="/home" class="btn btn-sm btn-primary" role="button">Home</a>
-                                    <!--<button href="/home" type="submit" class="btn btn-primary btn-sm" role="button">Home</button>-->
-                                    <!--<button type="submit" href="/home" class="btn btn-sm btn-primary" role="button">Home</button>-->
+                                  
                             </fieldset>
                         </form>
                         @if ($errors->any())
