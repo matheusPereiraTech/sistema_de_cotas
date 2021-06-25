@@ -15,7 +15,7 @@ class CreateAluno extends Migration
     {
         Schema::create('aluno', function (Blueprint $table) {
             $table->increments('matricula');
-            $table->date("data_nascimento");
+            $table->string("data_nascimento");
             $table->string('email');
             $table->string('sexo');
             $table->string('raca');

@@ -14,7 +14,7 @@
 
     <div class="card border">
         <div class="card-body">
-            <form action="" method="POST">
+            <form action="/alunos" method="POST">
                 @csrf
                 <fieldset>
                 <legend>Cadastro de alunos</legend>
@@ -22,8 +22,8 @@
                     <label for="matricula">Matrícula</label>
                     <input type="text" class="form-control" name="matricula" id="matricula" placeholder="Matrícula"><br><br>
 
-                    <label for="dataNascimento">Data de nascimento</label>
-                    <input type="text" class="form-control" name="dataNascimento" id="dataNascimento" placeholder="Data de nascimento"><br><br>
+                    <label for="data_nascimento">Data de nascimento</label>
+                    <input type="text" class="form-control" name="data_nascimento" id="data_nascimento" placeholder="Data de nascimento"><br><br>
 
                     <label for="email">E-mail</label>
                     <input type="email" class="form-control" name="email" id="email" placeholder="E-mail"><br><br>
@@ -38,8 +38,14 @@
                     <label for="raca">Raça</label>
                     <input type="text" class="form-control" name="raca" id="raca" placeholder="Raça"><br><br>
 
-                    <label for="forma_ingresso">Forma de ingresso?</label>
+                    <label for="forma_ingresso">Forma de ingresso</label>
                     <input type="text" class="form-control" name="forma_ingresso" id="forma_ingresso" placeholder="Forma de ingresso"><br><br>
+
+                    <label for="curso">Curso</label>
+                    <input type="text" class="form-control" name="curso" id="curso" placeholder="Curso"><br><br>
+
+                    <label for="status">Curso</label>
+                    <input type="text" class="form-control" name="status" id="status" placeholder="Status"><br><br>
 
                     <button type="submit" class="btn btn-primary btn-sm">Salvar</button>
                     <button type="submit" class="btn btn-danger btn-sm">Cancelar</button>

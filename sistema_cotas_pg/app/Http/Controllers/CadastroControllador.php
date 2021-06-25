@@ -13,7 +13,8 @@ class CadastroControllador extends Controller
      */
     public function index()
     {
-        return view('cadastro');
+        $alunos = Aluno::all();
+        return view('mostrarcadastro',compact('alunos'));
     }
 
     /**
@@ -23,7 +24,7 @@ class CadastroControllador extends Controller
      */
     public function create()
     {
-        //
+        return view('cadastro');
     }
 
     /**
@@ -34,15 +35,26 @@ class CadastroControllador extends Controller
      */
     public function store(Request $request)
     {
+        $request->validate([
+            'data_nascimento'=>'required',
+            'email'=>'required',
+            'sexo'=>'required',
+            'raca'=>'required',
+            'curso'=>'required',
+            'status'=>'required',
+        ]);
 
-        $aluno = new Aluno();
-        $aluno -> matricula = $request -> input('matricula');
-        $aluno -> dataNascimento = $request -> input('dataNascimento');
-        $aluno -> email = $request -> input('email');
-        $aluno -> sexo = $request -> input('sexo');
-        $aluno -> raca = $request -> input('raca');
-        $aluno -> forma_ingresso = $request -> input('forma_ingresso');
-        $aluno -> save();
+        $alunos = new Aluno();
+        $alunos -> matricula = $request -> input('matricula');
+        $alunos -> data_nascimento = $request -> input('data_nascimento');
+        $alunos -> email = $request -> input('email');
+        $alunos -> sexo = $request -> input('sexo');
+        $alunos -> raca = $request -> input('raca');
+        $alunos -> forma_ingresso = $request -> input('forma_ingresso');
+        $alunos -> curso = $request -> input('curso');
+        $alunos -> status = $request -> input('status');
+        $alunos -> save();
+        return redirect('/alunos');
         
     }
 
@@ -54,7 +66,7 @@ class CadastroControllador extends Controller
      */
     public function show($id)
     {
-        //
+        return view('MostrarCadastro');
     }
 
     /**
