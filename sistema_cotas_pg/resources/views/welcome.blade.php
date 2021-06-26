@@ -2,7 +2,8 @@
 
 @section('content')
 
-<h3> Bem vindo ao sistema de cotas </h3>
+<h3> Bem vindo ao sistema de cadastro de alunos por cotas </h3>
+
 
 <!--<!DOCTYPE html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">

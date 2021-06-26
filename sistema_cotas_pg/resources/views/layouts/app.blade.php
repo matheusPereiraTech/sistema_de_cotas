@@ -1,3 +1,4 @@
+
 <!doctype html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}" style="background-color: #87CEFA;">
 
@@ -6,12 +7,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <!-- CSRF Token -->
+
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
     <title>{{ config('app.name', 'Laravel') }}</title>
 
     <!-- Scripts -->
-    <script src="{{ asset('js/app.js') }}" defer></script>
+   <script src="{{ asset('js/app.js') }}" defer></script>
 
 
 
@@ -25,16 +27,55 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
 
     <!-- Styles -->
-    <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+   <link href="{{ asset('css/app.css') }}" rel="stylesheet">
 </head>
 
+<!-- teste navbar -->
+<!--<html>
+    <head>
+        <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+        <title>Cadastro de Produtos</title>
+<meta name="csrf-token" content="{{ csrf_token() }}">
+    </head>
+<body>
+    <div class=”container”>
+        @component('componentes.component_navbar', [ "current" =>$current ?? '' ])
+        @endcomponent
+        <main role="main">
+            @hasSection('body')
+                @yield('body')
+            @endif
+        </main>
+
+    <script src="{{ asset('js/app.js')}}" type="text/javascript"></script>-->
+
+    <!-- teste -->
+    <!--<div class="collapse navbar-collapse" id="navbarSupportedContent">-->
+                        <!-- Left Side Of Navbar -->
+                        <!--<ul class="navbar-nav mr-auto">
+
+                        </ul>-->
+                        <!--fim teste -->
+
+</body>
+
+
+</html>
+
+<!-- fim teste navbar -->
 
 <body>
     <div class="w-100 p-3 h-100 d-inline-block" style="background-color: #87CEFA;">
         <div id="app">
             <nav class="navbar navbar-expand-md">
                 <div class="container text-white" style="background-color: #87CEFA;">
-                    <a class="navbar-brand" href="{{ url('/') }}">
+
+                    <!-- teste compnent
+                    @component('componentes.component_navbar', [ "current" =>$current ?? '' ])
+        @endcomponent
+        fim teste compnent -->
+
+                   <a class="navbar-brand" href="{{ url('/') }}">
                         {{ config('app.name', 'Laravel') }}
                     </a>
                     <button class="navbar-toggler" type="button" data-toggle="collapse"
@@ -45,7 +86,7 @@
 
                     <div class="collapse navbar-collapse" id="navbarSupportedContent">
                         <!-- Left Side Of Navbar -->
-                        <ul class="navbar-nav mr-auto">
+                       <ul class="navbar-nav mr-auto">
 
                         </ul>
 
@@ -96,3 +137,4 @@
 </body>
 
 </html>
+
