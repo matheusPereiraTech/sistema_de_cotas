@@ -16,7 +16,7 @@ class CadastroControllador extends Controller
     public function index()
     {
         $alunos = Aluno::all();
-        return view('mostrarcadastro',compact('alunos'));
+        return view('mostrarCadastro',compact('alunos'));
     }
 
     /**
@@ -79,7 +79,8 @@ class CadastroControllador extends Controller
      */
     public function show($id)
     {
-        return view('MostrarCadastro');
+        $alunos = Aluno::all();
+        return view('mostrarCadastro',compact('alunos'));
     }
 
     /**
@@ -90,7 +91,7 @@ class CadastroControllador extends Controller
      */
     public function edit($id)
     {
-        
+    //
     }
 
     /**
@@ -102,7 +103,13 @@ class CadastroControllador extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $alus = Aluno::find($id);
+        if (isset($alus)) {
+            $alus -> nome = $request->input('nome');
+            $alus->save();
+        }
+
+        return redirect('/alunos');
     }
 
     /**
