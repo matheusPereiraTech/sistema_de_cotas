@@ -57,7 +57,7 @@ class CadastroControllador extends Controller
         $request->validate($regras, $mensagens);
 
         $alunos = new Aluno();
-        $alunos -> matricula = $request -> input('matricula');
+        $alunos -> matricula = $request -> input('id');
         $alunos -> data_nascimento = $request -> input('data_nascimento');
         $alunos -> nome = $request -> input('nome');
         $alunos -> email = $request -> input('email');
@@ -91,11 +91,7 @@ class CadastroControllador extends Controller
      */
     public function edit($id)
     {
-        $alu = Aluno::find($id);
-        if (isset($alu)) {
-            return view('cadastro', compact('alunos'));
-        }
-        return redirect('cadastro');
+    //
     }
 
     /**
