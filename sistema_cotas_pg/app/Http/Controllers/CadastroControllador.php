@@ -108,11 +108,15 @@ class CadastroControllador extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  int  $id
+     * @param  int  $matricula
      * @return \Illuminate\Http\Response
      */
     public function destroy($id)
     {
-        //
+       $alunos = Aluno::find($id);
+       if (isset($alunos)) {
+           $alunos->delete();
+       }
+       return redirect('/alunos');
     }
 }

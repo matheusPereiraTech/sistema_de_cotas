@@ -14,7 +14,7 @@
 <body>
     <main role="main">
         <div class="row">
-            <div class="container col-sm-8 offset-md-2">
+            <div class="container col-sm-10 offset-md-1">
                 <div class="card border">
                     <div class="card-header">
                         <h5 class="card-title">Cadastro de Cliente</h5>
@@ -23,6 +23,9 @@
                         <table class="table table-bordered table-hover" id="aluno">
                             <thead>
                                 <tr>
+                                    <th>
+
+                                    </th>
                                     <th>Matricula</th>
                                     <th>Nome</th>
                                     <th>Data de Nascimento</th>
@@ -37,7 +40,7 @@
                             <tbody>
                                 @foreach($alunos as $a)
                                 <tr>
-                                    <td>{{$a->matricula}}</td>
+                                    <td> {{$a->matricula}}</td>
                                     <td>{{$a->nome}}</td>
                                     <td>{{$a->data_nascimento}}</td>
                                     <td>{{$a->email}}</td>
@@ -46,6 +49,13 @@
                                     <td>{{$a->forma_ingresso}}</td>
                                     <td>{{$a->curso}}</td>
                                     <td>{{$a->status}}</td>
+                                    <td>
+                                        <form action="{{ route('alunos.destroy', $a['matricula']) }}" method="POST">
+                                            @csrf
+                                            @method('DELETE')
+                                            <input type="submit" class="btn btn-sm btn-danger" value="Apagar">
+                                        </form>
+                                    </td>
                                 </tr>
                                 @endforeach
                             </tbody>
