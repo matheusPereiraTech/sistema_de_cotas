@@ -23,9 +23,6 @@
                         <table class="table table-bordered table-hover" id="aluno">
                             <thead>
                                 <tr>
-                                    <th>
-
-                                    </th>
                                     <th>Matricula</th>
                                     <th>Nome</th>
                                     <th>Data de Nascimento</th>
@@ -35,12 +32,13 @@
                                     <th>Forma Ingresso</th>
                                     <th>Curso</th>
                                     <th>Status</th>
+                                    <th>Ação</th>
                                 </tr>
                             </thead>
                             <tbody>
                                 @foreach($alunos as $a)
                                 <tr>
-                                    <td> {{$a->matricula}}</td>
+                                    <td> {{$a->id}}</td>
                                     <td>{{$a->nome}}</td>
                                     <td>{{$a->data_nascimento}}</td>
                                     <td>{{$a->email}}</td>
@@ -50,7 +48,8 @@
                                     <td>{{$a->curso}}</td>
                                     <td>{{$a->status}}</td>
                                     <td>
-                                        <form action="{{ route('alunos.destroy', $a['matricula']) }}" method="POST">
+                                    <a href="{{ route('alunos.edit', $a['id']) }}" clas="btn btn-sm btn-primary">Editar</a>
+                                        <form action="{{ route('alunos.destroy', $a['id']) }}" method="POST">
                                             @csrf
                                             @method('DELETE')
                                             <input type="submit" class="btn btn-sm btn-danger" value="Apagar">

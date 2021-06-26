@@ -14,7 +14,7 @@ class CreateAluno extends Migration
     public function up()
     {
         Schema::create('aluno', function (Blueprint $table) {
-            $table->increments('matricula');
+            $table->increments('id');
             $table->string("data_nascimento");
             $table->string("nome");
             $table->string('email');
