@@ -30,7 +30,7 @@
 </head>
 
 
-<body>
+<body style="background-color: #87CEFA;"> 
 
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
         <a class="navbar-brand" href="#">Navbar</a>
@@ -49,14 +49,14 @@
                 <li class="nav-item">
                     <a class="nav-link" href="http://localhost:8000/register">Register</a>
                 </li>
+
+
             </ul>
         </div>
     </nav>
-
-
-    
-    </div>
-    </div>
+    <main class="py-4">
+        @yield('content')
+    </main>
 
 </body>
 
