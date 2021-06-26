@@ -1,11 +1,14 @@
-@extends('layouts.app')
+<html>
+[@extends('layouts.app')
+
+
 
 @section('content')
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
-
+    
                 <style>
                 * {
                     font-family: Courier New;
@@ -19,9 +22,9 @@
                             <fieldset>
                                 <legend>Cadastro de alunos</legend>
                                 <div class="form-group">
-                                    <label for="matricula">Matrícula</label>
-                                    <input type="text" class="form-control" name="matricula" id="matricula"
-                                        placeholder="Matrícula"><br><br>
+                                    <label for="nome">Matrícula</label>
+                                    <input type="text" class="form-control" name="nome" id="nome"
+                                        placeholder="Nome"><br><br>
 
                                     <label for="data_nascimento">Data de nascimento</label>
                                     <input type="text" class="form-control" name="data_nascimento" id="data_nascimento"

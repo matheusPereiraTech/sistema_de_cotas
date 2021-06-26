@@ -24,6 +24,7 @@
                             <thead>
                                 <tr>
                                     <th>Matricula</th>
+                                    <th>Nome</th>
                                     <th>Data de Nascimento</th>
                                     <th>Email</th>
                                     <th>Sexo</th>
@@ -37,6 +38,7 @@
                                 @foreach($alunos as $a)
                                 <tr>
                                     <td>{{$a->matricula}}</td>
+                                    <td>{{$a->nome}}</td>
                                     <td>{{$a->data_nascimento}}</td>
                                     <td>{{$a->email}}</td>
                                     <td>{{$a->sexo}}</td>
