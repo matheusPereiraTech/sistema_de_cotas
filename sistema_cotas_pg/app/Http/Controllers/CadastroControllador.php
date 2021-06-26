@@ -58,8 +58,8 @@ class CadastroControllador extends Controller
 
         $alunos = new Aluno();
         $alunos -> matricula = $request -> input('matricula');
-        $alunos -> nome = $request -> input('nome');
         $alunos -> data_nascimento = $request -> input('data_nascimento');
+        $alunos -> nome = $request -> input('nome');
         $alunos -> email = $request -> input('email');
         $alunos -> sexo = $request -> input('sexo');
         $alunos -> raca = $request -> input('raca');
@@ -68,7 +68,7 @@ class CadastroControllador extends Controller
         $alunos -> status = $request -> input('status');
         $alunos -> save();
         return redirect('/alunos');
-        
+
     }
 
     /**
