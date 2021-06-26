@@ -51,7 +51,7 @@ class RegisterController extends Controller
     {
         return Validator::make($data, [
             'name' => ['required', 'string', 'max:255'],
-            'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
+            'email' => ['required', 'string', 'email', 'max:255'],
             'password' => ['required', 'string', 'min:8', 'confirmed'],
         ]);
     }
@@ -69,5 +69,47 @@ class RegisterController extends Controller
             'email' => $data['email'],
             'password' => Hash::make($data['password']),
         ]);
+    }
+
+      /**
+     * Store a newly created resource in storage.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @return \Illuminate\Http\Response
+     */
+    public function store(Request $request)
+    {
+
+
+        $regras=[
+            'data_nascimento'=>'required',
+            'nome'=>'required|unique:alunos',
+            'email'=>'required|email|unique:alunos',
+            'sexo'=>'required',
+            'raca'=>'required',
+            'curso'=>'required|max:100',
+            'status'=>'required',
+        ];
+        $mensagens = [
+            'required'=> 'O campo :attribute não pode estar vazio',
+            'email.email' => 'Digite um email válido',
+            'curso.max' => 'Digite um tamanho válido ',
+        ];
+
+        $request->validate($regras, $mensagens);
+
+        $alunos = new Aluno();
+        $alunos -> matricula = $request -> input('matricula');
+        $alunos -> nome = $request -> input('nome');
+        $alunos -> data_nascimento = $request -> input('data_nascimento');
+        $alunos -> email = $request -> input('email');
+        $alunos -> sexo = $request -> input('sexo');
+        $alunos -> raca = $request -> input('raca');
+        $alunos -> forma_ingresso = $request -> input('forma_ingresso');
+        $alunos -> curso = $request -> input('curso');
+        $alunos -> status = $request -> input('status');
+        $alunos -> save();
+        return redirect('/alunos');
+        
     }
 }

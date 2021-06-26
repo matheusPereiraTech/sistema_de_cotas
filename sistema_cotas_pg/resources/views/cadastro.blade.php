@@ -1,10 +1,19 @@
 @extends('layouts.app')
 
 @section('content')
+
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
+                <div class="card-header">{{ __('Dashboard') }}</div>
+
+                <div class="card-body">
+                    @if (session('status'))
+                        <div class="alert alert-success" role="alert">
+                            {{ session('status') }}
+                        </div>
+                    @endif
 
                 <style>
                 * {
@@ -19,13 +28,17 @@
                             <fieldset>
                                 <legend>Cadastro de alunos</legend>
                                 <div class="form-group">
-                                    <label for="matricula">Matrícula</label>
+                                    <label for="nome">Matrícula</label>
                                     <input type="text" class="form-control" name="matricula" id="matricula"
-                                        placeholder="Matrícula"><br><br>
+                                        placeholder="matricula"><br><br>
 
                                     <label for="data_nascimento">Data de nascimento</label>
                                     <input type="text" class="form-control" name="data_nascimento" id="data_nascimento"
                                         placeholder="Data de nascimento"><br><br>
+
+                                        <label for="nome">Nome</label>
+                                        <input type="text" class="form-control" name="nome" id="nome"
+                                            placeholder="Nome"><br><br>
 
                                     <label for="email">E-mail</label>
                                     <input type="email" class="form-control" name="email" id="email"

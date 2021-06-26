@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 use App\Models\Aluno;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Validator;
 
 class CadastroControllador extends Controller
 {
@@ -35,18 +37,29 @@ class CadastroControllador extends Controller
      */
     public function store(Request $request)
     {
-        $request->validate([
+
+
+        $regras=[
             'data_nascimento'=>'required',
+            'nome'=>'required|unique:alunos',
             'email'=>'required|email|unique:alunos',
             'sexo'=>'required',
             'raca'=>'required',
             'curso'=>'required|max:100',
             'status'=>'required',
-        ]);
+        ];
+        $mensagens = [
+            'required'=> 'O campo :attribute não pode estar vazio',
+            'email.email' => 'Digite um email válido',
+            'curso.max' => 'Digite um tamanho válido ',
+        ];
+
+        $request->validate($regras, $mensagens);
 
         $alunos = new Aluno();
         $alunos -> matricula = $request -> input('matricula');
         $alunos -> data_nascimento = $request -> input('data_nascimento');
+        $alunos -> nome = $request -> input('nome');
         $alunos -> email = $request -> input('email');
         $alunos -> sexo = $request -> input('sexo');
         $alunos -> raca = $request -> input('raca');
@@ -55,7 +68,7 @@ class CadastroControllador extends Controller
         $alunos -> status = $request -> input('status');
         $alunos -> save();
         return redirect('/alunos');
-        
+
     }
 
     /**
