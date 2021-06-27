@@ -102,10 +102,17 @@ class CadastroControllador extends Controller
      */
     public function update(Request $request, $id)
     {
-        $alus = Aluno::find($id);
-        if (isset($alus)) {
-            $alus -> nome = $request->input('nome');
-            $alus->save();
+        $alunos = Aluno::find($id);
+        if (isset($alunos)) {
+        $alunos -> data_nascimento = $request -> input('data_nascimento');
+        $alunos -> nome = $request -> input('nome');
+        $alunos -> email = $request -> input('email');
+        $alunos -> sexo = $request -> input('sexo');
+        $alunos -> raca = $request -> input('raca');
+        $alunos -> forma_ingresso = $request -> input('forma_ingresso');
+        $alunos -> curso = $request -> input('curso');
+        $alunos -> status = $request -> input('status');
+            $alunos->save();
         }
 
         return redirect('/alunos');

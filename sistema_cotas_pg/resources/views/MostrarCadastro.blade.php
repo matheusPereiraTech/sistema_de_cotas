@@ -3,7 +3,7 @@
 @section('content')
 <main role="main">
     <div class="row">
-        <div class="container col-sm-8 offset-md-2">
+        <div class="container col-sm-10 offset-md-1">
             <div class="card border">
                 <div class="card-header">
                     <h5 class="card-title">Alunos cadastrados</h5>

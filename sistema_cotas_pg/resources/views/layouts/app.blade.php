@@ -48,7 +48,7 @@
                     <a class="nav-link" href="http://localhost:8000/alunos/create">Cadastro</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="http://localhost:8000/alunos/show">Consultar alunos</a>
+                    <a class="nav-link" href="http://localhost:8000/alunos">Consultar alunos</a>
                 </li>
             </ul>
         </div>
