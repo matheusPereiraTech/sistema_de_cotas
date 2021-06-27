@@ -90,7 +90,11 @@ class CadastroControllador extends Controller
      */
     public function edit($id)
     {
-    //
+        $alunos = Aluno::find($id);
+        if (isset($alunos)){
+            return view('edit', compact('alunos'));
+        }
+        return redirect('/alunos');
     }
 
     /**
