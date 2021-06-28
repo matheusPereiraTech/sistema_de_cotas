@@ -1,6 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
+<div class="container">
 
 <div class="card border">
     <div class="card-body">
@@ -54,9 +55,8 @@
                     </select><br><br>
 
                     <button type="submit" class="btn btn-primary btn-sm">Salvar</button>
-                    <button type="submit" class="btn btn-danger btn-sm">Cancelar</button>
-                    <a href="/home" class="btn btn-sm btn-primary" role="button">Home</a>
-
+                    <a href="/home" class="btn btn-sm btn-danger" role="button">Cancelar</a>
+                    
             </fieldset>
         </form>
         @if ($errors->any())

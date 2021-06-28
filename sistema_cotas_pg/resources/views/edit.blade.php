@@ -4,8 +4,9 @@
 
 <div class="card border">
     <div class="card-body">
-        <form action="/alunos" method="POST">
+    <form action="{{ route('alunos.update', $alunos['id']) }}" method="POST">
             @csrf
+            @method('PUT')
             <fieldset>
                 <legend>Cadastro de alunos</legend>
                 <div class="form-group">
@@ -18,7 +19,8 @@
                         placeholder="Data de nascimento"><br><br>
 
                     <label for="email">E-mail</label>
-                    <input type="email" class="form-control" name="email" id="email" value="" placeholder="E-mail"><br><br>
+                    <input type="email" class="form-control" name="email" id="email" value=""
+                        placeholder="E-mail"><br><br>
 
                     <label for="sexo">Sexo</label>
                     <select name="sexo" class="form-control">
@@ -42,7 +44,8 @@
                         placeholder="Forma de ingresso"><br><br>
 
                     <label for="curso">Curso</label>
-                    <input type="text" class="form-control" name="curso" id="curso" value="" placeholder="Curso"><br><br>
+                    <input type="text" class="form-control" name="curso" id="curso" value=""
+                        placeholder="Curso"><br><br>
 
                     <label for="status">Status</label>
                     <select name="status" class="form-control">
@@ -54,8 +57,8 @@
                     </select><br><br>
 
                     <button type="submit" class="btn btn-primary btn-sm">Salvar</button>
-                    <button type="submit" class="btn btn-danger btn-sm">Cancelar</button>
-                    <a href="/home" class="btn btn-sm btn-primary" role="button">Home</a>
+                    <a href="/home" class="btn btn-sm btn-danger" role="button">Cancelar</a>
+                    
 
             </fieldset>
         </form>
