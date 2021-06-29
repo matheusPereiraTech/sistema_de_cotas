@@ -24,6 +24,6 @@ Route::get('/', function () {
 Auth::routes();
 
 // Rota cadastro de aluno
-Route::resource('/alunos', CadastroControllador::class);
+Route::resource('/alunos', CadastroControllador::class)->middleware('auth');
 Route::get('/home', [HomeController::class, 'index'])->name('home');
 Route::get('/inicio', [HomeController::class, 'index'])->name('inicio');
